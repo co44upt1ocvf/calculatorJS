@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Калькулятор</title>
+    <link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+    <h2>Калькулятор</h2>
+    <input id="input1"/>
+    <br>
+    <div id="operator_btns">
+        <button class="glow-on-hover" type="button" id="plus" onclick="op='+'">+</button>
+        <button class="glow-on-hover" type="button" id="minus" onclick="op='-'">-</button>
+        <button class="glow-on-hover" type="button" id="multiply" onclick="op='*'">*</button>
+        <button class="glow-on-hover" type="button" id="divide" onclick="op='/'">:</button>
+    </div>
+    <br>
+    <input id="input2"/>
+    <br>
+
+    <button class="glow-on-hover" type="button"  onclick="calculate()">Посчитать</button>
+
+    <div class="card">
+        <div class="container">
+            <h2 class="resulttext"><b>Результат</b></h2>
+            <p class="resulttext" id="result"></p>
+        </div>
+    </div>
+
+    <script>
+        var op;
+
+        function calculate() {
+            var result;
+            var input1 = Number(document.getElementById("input1").value);
+            var input2 = Number(document.getElementById("input2").value);
+            switch (op) {
+                case '+':
+                    result = input1 + input2;
+                    break;
+                case '-':
+                    result = input1 - input2;
+                    break;
+                case '*':
+                    result = input1 * input2;
+                    break;
+                case '/':
+                    result = input1 / input2;
+                    break;
+            }
+
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+
+</body>
+</html>
